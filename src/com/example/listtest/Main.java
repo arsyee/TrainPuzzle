@@ -46,6 +46,28 @@ public class Main {
             CounterObject object = objectList.get(i);
             System.out.println("  found object: " + object);
         }
-}
+        
+        System.out.println();
+        System.out.println("TEST: Passing parameters");
+
+        System.out.println();
+        CounterObject testObject = new CounterObject();
+        testObject.data = 10;
+        change(testObject);
+        System.out.println("testObject data after change: " + testObject.data);
+
+        System.out.println();
+        int testPrimitive = 10;
+        change(testPrimitive);
+        System.out.println("testPrimitive after change: " + testPrimitive);
+    }
+
+    private static void change(CounterObject testObject) {
+        testObject.data = 20;
+    }
+
+    private static void change(int testPrimitive) {
+        testPrimitive = 20;
+    }
 
 }

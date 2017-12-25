@@ -54,7 +54,9 @@ public class Main {
         CounterObject testObject = new CounterObject();
         testObject.data = 10;
         change(testObject);
-        System.out.println("testObject data after change: " + testObject.data);
+        System.out.println("testObject data after reference change: " + testObject.data);
+        changeData(testObject);
+        System.out.println("testObject data after data change: " + testObject.data);
 
         System.out.println();
         int testPrimitive = 10;
@@ -63,7 +65,12 @@ public class Main {
     }
 
     private static void change(CounterObject testObject) {
+        testObject = new CounterObject();
         testObject.data = 20;
+    }
+
+    private static void changeData(CounterObject testObject) {
+        testObject.data = 30;
     }
 
     private static void change(int testPrimitive) {
